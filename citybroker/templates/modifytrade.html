@@ -1,0 +1,338 @@
+<head>
+{% include "agenthead.html" %}
+<title>Modify Trade - CityBroker Real Estate Ltd. Brokerage - London, ON</title>
+</head>
+{% include "headeragent.html" %}
+
+<div class="container">
+<form method="POST" id="modify-form">
+    <div class="text-center">
+        <h1>Modify Trade</h1>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <p style="font-weight:400; margin-top:10px; margin-bottom:-1px">GENERAL</p>
+            <div class="dropdown-divider"></div>
+            <p style="margin:1;padding:1" id="entrydate">Entry Date: </p>
+            <p style="margin:1;padding:1" id="offerdate">Offer Date: </p>
+                <p style="margin:1;padding:1" id="endtype">End: </p>
+                <p style="margin:1;padding:1" id="transactiontype">Transaction Type: </p>
+                <p style="margin:1;padding:1" id="tradenum">TRADE # </p>
+                <p style="margin:1;padding:1" id="mls">MLS # </p>
+                <p style="margin:1;padding:1" id="address"></p>
+                <div class="dropdown-divider"></div>
+                <div>
+                    <button type="button" title="Modify" class="btn btn-primary"></button> <p style="margin:-1;padding:-1;display:inline" id="status">Status: </p>
+                </div>
+                <div>
+                    <button type="button" title="Modify" class="btn btn-primary"></button><p style="margin:1;padding:1;display:inline" id="saleprice">Saleprice: </p>
+                </div>
+                <div>
+                    <button type="button" title="Modify" class="btn btn-primary"></button><p style="margin:1;padding:1;display:inline" id="firmdate">Firm Date: </p>
+                </div>
+                <div>
+                    <button type="button" title="Modify" class="btn btn-primary"></button><p style="margin:1;padding:1;display:inline" id="closedate">Close Date: </p>
+                </div>
+        </div>
+        <div class="col-md-4">
+            <p style="font-weight:400; margin-top:10px; margin-bottom:-1px">DEPOSIT</p>
+            <div class="dropdown-divider"></div>
+            <p style="margin:-1;padding:-1">In Trust</p>
+            <p style="margin:-1;padding:-1"><b>Held by</b></p>
+            <div>
+                <button type="button" title="Modify" class="btn btn-primary"></button> <p style="margin:-1;padding:-1;display:inline" id="depositaccount"></p>
+            </div>
+            <p style="margin:-1;padding:-1"><b>Date Received</b></p>
+            <div>
+                <button type="button" title="Modify" class="btn btn-primary"></button> <p style="margin:-1;padding:-1;display:inline" id="depositreceiveddate"></p>
+            </div>
+            <p style="margin:-1;padding:-1"><b>Received</b></p>
+            <div>
+                <button type="button" title="Modify" class="btn btn-primary"></button> <p style="margin:-1;padding:-1;display:inline" id="depositreceived"></p>
+            </div>
+            <p style="margin:-1;padding:-1"><b>Received From</b></p>
+            <div>
+                <button type="button" title="Modify" class="btn btn-primary"></button> <p style="margin:-1;padding:-1;display:inline" id="depositreceivedfrom"></p>
+            </div>
+            <p style="margin:-1;padding:-1"><b>Amount</b></p>
+            <div>
+                <button type="button" title="Modify" class="btn btn-primary"></button> <p style="margin:-1;padding:-1;display:inline" id="depositamt"></p>
+            </div>
+            <p style="margin:-1;padding:-1"><b>Cheque #</b></p>
+            <div>
+                <button type="button" title="Modify" class="btn btn-primary"></button> <p style="margin:-1;padding:-1;display:inline" id="chequenum"></p>
+            </div>
+            <p style="margin:-1;padding:-1"><b>Interest</b></p>
+            <div>
+                <button type="button" title="Modify" class="btn btn-primary"></button> <p style="margin:-1;padding:-1;display:inline" id="depositinterest"></p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <p style="font-weight:400; margin-top:10px; margin-bottom:-1px" class="text-center">REFERRAL</p>
+            <div class="dropdown-divider"></div>
+            <div id="referral-div"></div>
+                    INSIDE AGENT REFERRAL
+                <input type="hidden" value="" name="remove-refin" id="inside-ref-remove" />
+                <div id="internal-div"></div>
+                <div class="card-body">
+
+                    <button type="button" id="add-inside-ref" class="btn btn-outline-primary" style="margin-top:10px; margin-bottom:10px; font-weight:bold">Add</button>
+                    <div id="insidereferral-div" class="text-center"></div>
+                </div>
+                    OUTSIDE BROKERAGE REFERRAL
+                <input type="hidden" value="" name="remove-refout" id="outside-ref-remove" />
+                <div id="outside-div"></div>
+                <div class="card-body">
+                    <button type="button" id="add-outside-ref" class="btn btn-outline-dark" style="margin-top:10px; margin-bottom:10px; font-weight:bold">Add</button>
+                    <div id="outsidereferral-div" class="text-center"></div>
+                </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="dropdown-divider"></div>
+            <p style="font-weight:400; margin-top:10px">Commissions (enter 0 if not applicable)</p>
+            <div class="dropdown-divider"></div>
+            <p style="margin-top:10px; margin-bottom:-1px">Listing Side Commission</p>
+            <div>
+                <button type="button" title="Modify" class="btn btn-primary"></button> <p style="margin:-1;padding:-1;display:inline" id="listingcomm"></p>
+            </div>
+
+            <div>
+                <button type="button" title="Modify" class="btn btn-primary"></button> <p style="margin:-1;padding:-1;display:inline" id="sellerrebate">Seller Rebate: </p>
+            </div>
+            <p style="margin-top:10px; margin-bottom:-1px">Buyer Side Commission</p>
+            <div>
+                <button type="button" title="Modify" class="btn btn-primary"></button> <p style="margin:-1;padding:-1;display:inline" id="buyercomm"></p>
+            </div>
+
+            <div>
+                <button type="button" title="Modify" class="btn btn-primary"></button> <p style="margin:-1;padding:-1;display:inline" id="buyerrebate">Buyer Rebate: </p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="dropdown-divider"></div>
+            <p style="font-weight:400; margin-top:10px; margin-bottom:-1px">CONDITIONS</p>
+            <input type="hidden" value="" name="remove-condother" id="cond-other-remove" />
+            <div class="dropdown-divider"></div>
+            <p style="margin:-1;padding:-1;font-weight:400">Financing</p>
+            <div>
+                <button type="button" title="Modify" class="btn btn-primary"></button> <p style="margin:-1;padding:-1;display:inline" id="financingduedate">Date: </p>
+            </div>
+
+            <div>
+                <button type="button" title="Modify" class="btn btn-primary"></button> <p style="margin:-1;padding:-1;display:inline" id="financingduetime">Time: </p>
+            </div>
+
+            <p style="margin:-1;padding:-1;font-weight:400">Inspection</p>
+            <div>
+                <button type="button" title="Modify" class="btn btn-primary"></button> <p style="margin:-1;padding:-1;display:inline" id="inspectionduedate">Date: </p>
+            </div>
+
+            <div>
+                <button type="button" title="Modify" class="btn btn-primary"></button> <p style="margin:-1;padding:-1;display:inline" id="inspectionduetime">Time: </p>
+            </div>
+
+            <p style="margin:-1;padding:-1;font-weight:400">Insurance</p>
+            <div>
+                <button type="button" title="Modify" class="btn btn-primary"></button> <p style="margin:-1;padding:-1;display:inline" id="insuranceduedate">Date: </p>
+            </div>
+
+            <div>
+                <button type="button" title="Modify" class="btn btn-primary"></button> <p style="margin:-1;padding:-1;display:inline" id="insuranceduetime">Time: </p>
+            </div>
+
+            <p style="margin:-1;padding:-1;font-weight:400">SBP</p>
+            <div>
+                <button type="button" title="Modify" class="btn btn-primary"></button> <p style="margin:-1;padding:-1;display:inline" id="sbpduedate">Date: </p>
+            </div>
+
+            <div>
+                <button type="button" title="Modify" class="btn btn-primary"></button> <p style="margin:-1;padding:-1;display:inline" id="sbpduetime">Time: </p>
+            </div>
+
+            <p style="margin:-1;padding:-1;font-weight:400">Status Certificate</p>
+            <div>
+                <button type="button" title="Modify" class="btn btn-primary"></button> <p style="margin:-1;padding:-1;display:inline" id="statusduedate">Date: </p>
+            </div>
+
+            <div>
+                <button type="button" title="Modify" class="btn btn-primary"></button> <p style="margin:-1;padding:-1;display:inline" id="statusduetime">Time: </p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="dropdown-divider"></div>
+            <p style="font-weight:400; margin-top:10px; margin-bottom:-1px">OTHER CONDITIONS</p>
+            <div class="dropdown-divider"></div>
+            <div id="conditions-div"></div>
+            <button type="button" id="add-other-cond" class="btn btn-outline-dark" style="margin-top:10px; margin-bottom:10px; font-weight:bold">Add condition</button>
+            <div id="otherconditions-div"></div>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="dropdown-divider"></div>
+                    <p style="margin:0;padding:0;font-weight:400">BUYER</p>
+                    <div class="dropdown-divider"></div>
+                    <div>
+                        <button type="button" title="Modify" class="btn btn-primary"></button> <p style="margin:-1;padding:-1;display:inline" id="buyer">Name: </p>
+                    </div>
+
+                    <div>
+                        <button type="button" title="Modify" class="btn btn-primary"></button> <p style="margin:-1;padding:-1;display:inline" id="buyerphone">Phone #: </p>
+                    </div>
+
+                    <div>
+                        <button type="button" title="Modify" class="btn btn-primary"></button> <p style="margin:-1;padding:-1;display:inline" id="buyeremail">Email: </p>
+                    </div>
+
+                    <div>
+                        <button type="button" title="Modify" class="btn btn-primary"></button> <p style="margin:-1;padding:-1;display:inline" id="buyeraddress">Addr: </p>
+                    </div>
+
+                    <div class="dropdown-divider"></div>
+                    <p style="margin:-1;padding:-1;font-weight:400">LAWYER</p>
+                    <div class="dropdown-divider"></div>
+                    <div>
+                        <button type="button" title="Modify" class="btn btn-primary"></button> <p style="margin:-1;padding:-1;display:inline" id="buyerlawyer">Name: </p>
+                    </div>
+
+                    <div>
+                        <button type="button" title="Modify" class="btn btn-primary"></button> <p style="margin:-1;padding:-1;display:inline" id="buyerlawyerphone">Phone #: </p>
+                    </div>
+                    <div>
+                        <button type="button" title="Modify" class="btn btn-primary"></button> <p style="margin:-1;padding:-1;display:inline" id="buyerlawyeremail">Email: </p>
+                    </div>
+
+                    <div>
+                        <button type="button" title="Modify" class="btn btn-primary"></button> <p style="margin:-1;padding:-1;display:inline" id="buyerlawyeraddress">Addr: </p>
+                    </div>
+
+
+                    <div class="dropdown-divider"></div>
+                    <p style="margin:-1;padding:-1;font-weight:400">MORTGAGE BROKER</p>
+                    <div class="dropdown-divider"></div>
+                    <div>
+                        <button type="button" title="Modify" class="btn btn-primary"></button> <p style="margin:-1;padding:-1;display:inline" id="buyermortgage">Name: </p>
+                    </div>
+
+                    <div>
+                        <button type="button" title="Modify" class="btn btn-primary"></button> <p style="margin:-1;padding:-1;display:inline" id="buyermortgagephone">Phone #: </p>
+                    </div>
+                    <div>
+                        <button type="button" title="Modify" class="btn btn-primary"></button> <p style="margin:-1;padding:-1;display:inline" id="buyermortgageemail">Email: </p>
+                    </div>
+                    <div>
+                        <button type="button" title="Modify" class="btn btn-primary"></button> <p style="margin:-1;padding:-1;display:inline" id="buyermortgageaddress">Addr: </p>
+                    </div>
+
+                    <div class="dropdown-divider"></div>
+                </div>
+                <div class="col-md-4">
+                    <div class="dropdown-divider"></div>
+                    <p style="margin:-1;padding:-1;font-weight:400">SELLER</p>
+                    <div class="dropdown-divider"></div>
+                    <div>
+                        <button type="button" title="Modify" class="btn btn-primary"></button> <p style="margin:-1;padding:-1;display:inline" id="seller">Name: </p>
+                    </div>
+
+                    <div>
+                        <button type="button" title="Modify" class="btn btn-primary"></button> <p style="margin:-1;padding:-1;display:inline" id="sellerphone">Phone #: </p>
+                    </div>
+
+                    <div>
+                        <button type="button" title="Modify" class="btn btn-primary"></button> <p style="margin:-1;padding:-1;display:inline" id="selleremail">Email: </p>
+                    </div>
+
+                    <div>
+                        <button type="button" title="Modify" class="btn btn-primary"></button> <p style="margin:-1;padding:-1;display:inline" id="selleraddress">Addr: </p>
+                    </div>
+
+                    <div class="dropdown-divider"></div>
+                    <p style="margin:-1;padding:-1;font-weight:400">LAWYER</p>
+                    <div class="dropdown-divider"></div>
+                    <div>
+                        <button type="button" title="Modify" class="btn btn-primary"></button> <p style="margin:-1;padding:-1;display:inline" id="sellerlawyer">Name: </p>
+                    </div>
+
+                    <div>
+                        <button type="button" title="Modify" class="btn btn-primary"></button> <p style="margin:-1;padding:-1;display:inline" id="sellerlawyerphone">Phone #: </p>
+                    </div>
+
+                    <div>
+                        <button type="button" title="Modify" class="btn btn-primary"></button> <p style="margin:-1;padding:-1;display:inline" id="sellerlawyeremail">Email: </p>
+                    </div>
+                    <div>
+                        <button type="button" title="Modify" class="btn btn-primary"></button> <p style="margin:-1;padding:-1;display:inline" id="sellerlawyeraddress">Addr: </p>
+                    </div>
+
+
+                    <div class="dropdown-divider"></div>
+                    <p style="margin:-1;padding:-1;font-weight:400">MORTGAGE BROKER</p>
+                    <div class="dropdown-divider"></div>
+                    <div>
+                        <button type="button" title="Modify" class="btn btn-primary"></button> <p style="margin:-1;padding:-1;display:inline" id="sellermortgage">Name: </p>
+                    </div>
+
+                    <div>
+                        <button type="button" title="Modify" class="btn btn-primary"></button> <p style="margin:-1;padding:-1;display:inline" id="sellermortgageaddress">Addr: </p>
+                    </div>
+
+                    <div>
+                        <button type="button" title="Modify" class="btn btn-primary"></button> <p style="margin:-1;padding:-1;display:inline" id="sellermortgageemail">Email: </p>
+                    </div>
+                    <div>
+                        <button type="button" title="Modify" class="btn btn-primary"></button> <p style="margin:-1;padding:-1;display:inline" id="sellermortgagephone">Phone #: </p>
+                    </div>
+
+
+                    <div class="dropdown-divider"></div>
+                </div>
+                <div class="col-md-4">
+                    <div class="dropdown-divider"></div>
+                    <p style="margin:0;padding:0;font-weight:400">CO-OPERATING BROKER</p>
+                    <div class="dropdown-divider"></div>
+                    <div>
+                        <button type="button" title="Modify" class="btn btn-primary"></button> <p style="margin:-1;padding:-1;display:inline" id="coopagentbrokerage">Brokerage: </p>
+                    </div>
+
+                    <div>
+                        <button type="button" title="Modify" class="btn btn-primary"></button> <p style="margin:-1;padding:-1;display:inline" id="coopagentname">Name: </p>
+                    </div>
+
+                    <div>
+                        <button type="button" title="Modify" class="btn btn-primary"></button> <p style="margin:-1;padding:-1;display:inline" id="coopagentphone">Phone #: </p>
+                    </div>
+
+                    <div>
+                        <button type="button" title="Modify" class="btn btn-primary"></button> <p style="margin:-1;padding:-1;display:inline" id="coopagentemail">Email: </p>
+                    </div>
+
+                    <div>
+                        <button type="button" title="Modify" class="btn btn-primary"></button> <p style="margin:-1;padding:-1;display:inline" id="coopagentaddress">Addr: </p>
+                    </div>
+
+                    <div class="dropdown-divider"></div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row text-center">
+        <div class="col-md-12 p-3">
+            <input autocomplete="off" type="submit" id="submit" class="btn btn-outline-dark btn-lg" value="SUBMIT">
+        </div>
+
+    </div>
+</form>
+</div>
+<script>const tradeJSON = {{ trade_json | safe }}</script>
+<script src="static/js/scripts/modifytrade.js"></script>
+</body>
+</html>

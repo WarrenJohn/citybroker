@@ -1,0 +1,271 @@
+<head>
+{% include "agenthead.html" %}
+  <title>New Trade Input - CityBroker Real Estate Ltd. Brokerage - London, ON</title>
+</head>
+{% include "headeragent.html" %}
+
+<body>
+
+<div class="container">
+<form method="POST">
+    <div class="text-center">
+        <h1> New Trade Input </h1>
+        <p style="display: inline;font-weight:400" id="trade-num">Trade #</p> | <p style="display: inline;font-weight:400" id="entry-date">Entry Date:</p>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div>
+                <p style="margin:-1px">*Offer Date:</p><input autocomplete="off" class="form-control"  type="date" name="offerdate" placeholder="Offer Date" required="">
+            </div>
+            <div>
+                <p style="margin:-1px">*Acceptance Date:</p><input autocomplete="off" class="form-control"  type="date" name="acceptancedate" placeholder="Acceptance Date" required="">
+            </div>
+            <div>
+                <p style="margin:-1px">*Closing Date:</p><input autocomplete="off" class="form-control"  type="date" name="closedate" placeholder="Closing Date" required="">
+            </div>
+
+            <p style="font-weight:400; margin-top:10px">Commissions (enter 0 if not applicable)</p>
+            <p style="margin-top:10px; margin-bottom:-1px">*Listing Side Commission</p>
+            <input autocomplete="off" class="form-control"  type="text" pattern="[0-9]+([\.][0-9]{0,2})?" name="listingcomm" placeholder="Amount" required="">
+
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-light" for="listingcommpercent"><input autocomplete="off"  class="form-control"  type="radio" name="listingcommpctordol" id="listingcommpercent" value="percent" required="">%</label>
+                <label class="btn btn-light" for="listingcommdollar"><input autocomplete="off"  class="form-control"  type="radio" name="listingcommpctordol" id="listingcommdollar" value="dollar" required="">$</label>
+            </div>
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-light" for="listingcommnetplushst"><input autocomplete="off"  class="form-control"  type="radio" name="listingcommnetplushst" id="listingcommnetplushst" value="plus" required="">+ HST</label>
+                <label class="btn btn-light" for="listingcommnetnethst"><input autocomplete="off"  class="form-control"  type="radio" name="listingcommnetplushst" id="listingcommnetnethst" value="net" required="">NET HST</label>
+            </div>
+            <p style="margin-top:10px; margin-bottom:-1px">*Buyer Side Commission</p>
+            <input autocomplete="off" class="form-control"  type="text" pattern="[0-9]+([\.][0-9]{0,2})?" name="buyercomm" placeholder="Amount" required="">
+
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-light" for="buyercommpercent"><input autocomplete="off"  class="form-control"  type="radio" name="buyercommpctordol" id="buyercommpercent" value="percent" required="">%</label>
+                <label class="btn btn-light" for="buyercommdollar"><input autocomplete="off"  class="form-control"  type="radio" name="buyercommpctordol" id="buyercommdollar" value="dollar" required="">$</label>
+            </div>
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-light" for="buyercommnetplushst"><input autocomplete="off"  class="form-control"  type="radio" name="buyercommnetplushst" id="buyercommnetplushst" value="plus" required="">+ HST</label>
+                <label class="btn btn-light" for="buyercommnetnethst"><input autocomplete="off"  class="form-control"  type="radio" name="buyercommnetplushst" id="buyercommnetnethst" value="net" required="">NET HST</label>
+            </div>
+            <p style="font-weight:400; margin-top:10px; margin-bottom:-1px">CONDITIONS</p>
+                 <p>
+                    Include time conditions are due.
+                    </p>
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-light " for="conditional" id="lconditional"><input autocomplete="off"  class="form-control"  type="radio" name="status" id="conditional" value="conditional" required="">Conditional</label>
+                    <label class="btn btn-light" for="firm" id="lfirm"><input autocomplete="off"  class="form-control"  type="radio" name="status" id="firm" value="firm" required="">Firm</label>
+                </div>
+                <div id="conditions-div">
+                    <p style="margin-top:10px; margin-bottom:-1px">Financing Condition Due Date</p>
+                    <input autocomplete="off" class="form-control"  type="date" style="width: 225px" name="financingduedate" placeholder="Financing Condition Due Date">
+                    <input autocomplete="off" class="form-control"  type="time" style="width: 225px" name="financingduetime" placeholder="Financing Condition Due Time">
+
+                    <p style="margin-top:10px; margin-bottom:-1px">Inspection Condition Due Date</p>
+                    <input autocomplete="off" class="form-control"  type="date" style="width: 225px" name="inspectionduedate" placeholder="Inspection Condition Due Date">
+                    <input autocomplete="off" class="form-control"  type="time" style="width: 225px" name="inspectionduetime" placeholder="Inspection Condition Due Time">
+
+                    <p style="margin-top:10px; margin-bottom:-1px">Insurance Condition Due Date</p>
+                    <input autocomplete="off" class="form-control"  type="date" style="width: 225px" name="insuranceduedate" placeholder="Insurance Condition Due Date">
+                    <input autocomplete="off" class="form-control"  type="time" style="width: 225px" name="insuranceduetime" placeholder="Insurance Condition Due Time">
+
+                    <p style="margin-top:10px; margin-bottom:-1px">Status Certificate Due Date</p>
+                    <input autocomplete="off" class="form-control"  type="date" style="width: 225px" name="statusduedate" placeholder="Status Certificate Due Date">
+                    <input autocomplete="off" class="form-control"  type="time" style="width: 225px" name="statusduetime" placeholder="Status Certificate Due Time">
+
+                    <p style="margin-top:10px; margin-bottom:-1px">Sale of the Buyers Property Due Date</p>
+                    <input autocomplete="off" class="form-control"  type="date" style="width: 225px" name="sbpduedate" placeholder="Sale of the Buyers Property Due Date">
+                    <input autocomplete="off" class="form-control"  type="time" style="width: 225px" name="sbpduetime" placeholder="Sale of the Buyers Property Due Time">
+
+                    <button type="button" id="add-other-cond" class="btn btn-outline-dark" style="margin-top:10px; margin-bottom:10px; font-weight:bold">Add condition</button>
+                    <div id="otherconditions-div"></div>
+                </div>
+        </div>
+
+        <div class="col-md-8">
+            <p style="font-weight:400">PROPERTY</p>
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-light" for="buyer"><input autocomplete="off"  class="form-control"  type="radio" name="endtype" id="buyer" value="buyer" required="">Buyer</label>
+                <label class="btn btn-light" for="seller"><input autocomplete="off"  class="form-control"  type="radio" name="endtype" id="seller" value="seller" required="">Seller</label>
+                <label class="btn btn-light" for="buyerseller"><input autocomplete="off"  class="form-control"  type="radio" name="endtype" id="buyerseller" value="buyerseller" required="">Buyer &amp; Seller</label>
+            </div>
+            <p style="margin-top:10px; margin-bottom:-1px">*Transaction type</p>
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-light" for="residential"><input autocomplete="off"  class="form-control"  type="radio" name="transactiontype" id="residential" value="residential" required="">Residential</label>
+                <label class="btn btn-light" for="multifamily"><input autocomplete="off"  class="form-control"  type="radio" name="transactiontype" id="multifamily" value="multifamily" required="">Multi-Family</label>
+
+                <label class="btn btn-light" for="commercial"><input autocomplete="off"  class="form-control"  type="radio" name="transactiontype" id="commercial" value="commercial" required="">Commercial</label>
+                <label class="btn btn-light" for="mixeduse"><input autocomplete="off"  class="form-control"  type="radio" name="transactiontype" id="mixeduse" value="mixeduse" required="">Mixed-Use</label>
+                <label class="btn btn-light" for="lease"><input autocomplete="off"  class="form-control"  type="radio" name="transactiontype" id="lease" value="lease" required="">Lease</label>
+            </div>
+            <p style="font-weight:400; margin-top:10px; margin-bottom:-1px" >Agreement of Purchase and Sale</p>
+            <input autocomplete="off" class="form-control"  type="text" pattern="\d*" name="mls" placeholder="*MLS #" required="">
+
+            <input autocomplete="off" class="form-control"  type="text" name="address" placeholder="*Full Property Address" required="">
+
+            <input autocomplete="off" class="form-control"  type="text" pattern="\d*" name="saleprice" placeholder="*Sale Price (numbers only)" required="">
+
+
+
+            <div>
+                <p style="font-weight:400; margin-top:10px; margin-bottom:-1px">DEPOSIT</p>
+                <input autocomplete="off" class="form-control"  type="text" pattern="\d*" name="depositamt" placeholder="*Deposit Amount" required="">
+                <p style="margin-top:10px; margin-bottom:-1px">*Deposit held by:</p>
+
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-light" for="citybroker" id="citybrokeraccountlabel"><input autocomplete="off"  class="form-control"  type="radio" name="depositaccount" id="citybroker" value="citybroker real estate ltd." required="">CITYBROKER REAL ESTATE LTD.</label>
+
+                    <label class="btn btn-light" for="other" id="depositaccountotherlabel"><input autocomplete="off"  class="form-control"  type="radio" name="depositaccount" id="other" value="other" required="" id="depositaccountotherlabel">Other Deposit Account</label>
+                    <input autocomplete="off" class="form-control"  type="text" name="depositaccountother" placeholder="Other Deposit Account" style="display:none" id="depositaccountother">
+                </div>
+
+                <p style="margin-top:10px; margin-bottom:-1px">*Deposit received: </p>
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-light " for="yes" id="depositrcvdlabelyes"><input autocomplete="off"  class="form-control"  type="radio" name="depositreceived" id="yes" value="yes" required="">Yes</label>
+                    <label class="btn btn-light" for="no" id="depositrcvdlabelno"><input autocomplete="off"  class="form-control"  type="radio" name="depositreceived" id="no" value="no" required="">No</label>
+                </div>
+                <div>
+                    <p style="margin-top:10px; margin-bottom:-1px">Date Deposit Received:</p>
+                    <input autocomplete="off" class="form-control"  type="date" name="depositreceiveddate" id="depositreceiveddate" placeholder="Deposit Received Date">
+
+                    <input autocomplete="off" class="form-control"  type="text" name="depositreceivedfrom" id="depositreceivedfrom" placeholder="Name on Deposit Cheque">
+                    <input autocomplete="off" class="form-control"  type="text" name="chequenum" id="chequenum" placeholder="Cheque Number">
+
+                    <p style="margin-top:10px; margin-bottom:-1px">Interest bearing account:</p>
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <label class="btn btn-light" for="interestyes"><input autocomplete="off"  class="form-control"  type="radio" name="depositinterest" id="interestyes" value="yes">Yes</label>
+                        <label class="btn btn-light" for="interestno"><input autocomplete="off"  class="form-control"  type="radio" name="depositinterest" id="interestno" value="no">No</label>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <!-- <p style="margin-top:10px; margin-bottom:-1px">*Chattels &amp; Fixtures</p>
+
+            <input class="form-control"  type="text" name="chattelincl" placeholder="Chattels Included (separate each with a comma)" required="">
+
+            <input class="form-control"  type="text" name="fixturesexcl" placeholder="Fixtures Excluded (separate each with a comma)" required=""> -->
+
+            <p style="font-weight:400; margin-top:10px; margin-bottom:-1px" class="text-center">REFERRAL</p>
+
+
+            <div class="card text-center">
+                <div class="card-header">
+                    INSIDE AGENT REFERRAL
+                </div>
+                <div class="card-body">
+
+                    <button type="button" id="add-inside-ref" class="btn btn-outline-primary" style="margin-top:10px; margin-bottom:10px; font-weight:bold">Add</button>
+                    <div id="insidereferral-div" class="text-center"></div>
+                </div>
+            </div>
+            <div class="card text-center">
+                <div class="card-header">
+                    OUTSIDE BROKERAGE REFERRAL
+                </div>
+                <div class="card-body">
+                    <button type="button" id="add-outside-ref" class="btn btn-outline-dark" style="margin-top:10px; margin-bottom:10px; font-weight:bold">Add</button>
+                    <div id="outsidereferral-div" class="text-center"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-4">
+                    <p style="font-weight:400; margin-top:10px; margin-bottom:-1px">BUYER</p>
+
+                    <input autocomplete="off" class="form-control"  type="text" name="buyer" placeholder="*Name(s)" required="">
+
+                    <input autocomplete="off" class="form-control"  type="text" name="buyeraddress" placeholder="Full Address">
+
+                    <input autocomplete="off" class="form-control"  type="tel" name="buyerphone" placeholder="Phone #">
+
+                    <input autocomplete="off" class="form-control"  type="email" name="buyeremail" placeholder="Email">
+
+                    <input autocomplete="off" class="form-control"  type="text" name="buyerrebate" placeholder="Rebate ($)">
+
+                    <p style="font-weight:400; margin-top:10px; margin-bottom:-1px">LAWYER</p>
+                    <input autocomplete="off" class="form-control"  type="text" name="buyerlawyer" placeholder="Name">
+
+                    <input autocomplete="off" class="form-control"  type="text" name="buyerlawyeraddress" placeholder="Full Address">
+
+                    <input autocomplete="off" class="form-control"  type="tel" name="buyerlawyerphone" placeholder="Phone #">
+
+                    <input autocomplete="off" class="form-control"  type="email" name="buyerlawyeremail" placeholder="Email">
+
+                    <p style="font-weight:400; margin-top:10px; margin-bottom:-1px">MORTGAGE BROKER</p>
+                    <input autocomplete="off" class="form-control"  type="text" name="buyermortgage" placeholder="Name">
+
+                    <input autocomplete="off" class="form-control"  type="text" name="buyermortgageaddress" placeholder="Full Address">
+
+                    <input autocomplete="off" class="form-control"  type="tel" name="buyermortgagephone" placeholder="Phone #">
+
+                    <input autocomplete="off" class="form-control"  type="email" name="buyermortgageemail" placeholder="Email">
+
+
+                </div>
+                <div class="col-md-4">
+                    <p style="font-weight:400; margin-top:10px; margin-bottom:-1px">SELLER</p>
+                    <input autocomplete="off" class="form-control"  type="text" name="seller" placeholder="*Name(s)" required="">
+
+                    <input autocomplete="off" class="form-control"  type="text" name="selleraddress" placeholder="Full Address">
+
+                    <input autocomplete="off" class="form-control"  type="tel" name="sellerphone" placeholder="Phone #">
+
+                    <input autocomplete="off" class="form-control"  type="email" name="selleremail" placeholder="Email">
+
+                    <input autocomplete="off" class="form-control"  type="text" name="sellerrebate" placeholder="Rebate($)">
+
+                    <p style="font-weight:400; margin-top:10px; margin-bottom:-1px">LAWYER</p>
+                    <input autocomplete="off" class="form-control"  type="text" name="sellerlawyer" placeholder="Name">
+
+                    <input autocomplete="off" class="form-control"  type="text" name="sellerlawyeraddress" placeholder="Full Address">
+
+                    <input autocomplete="off" class="form-control"  type="tel" name="sellerlawyerphone" placeholder="Phone #">
+
+                    <input autocomplete="off" class="form-control"  type="email" name="sellerlawyeremail" placeholder="Email">
+
+                    <p style="font-weight:400; margin-top:10px; margin-bottom:-1px">MORTGAGE BROKER</p>
+                    <input autocomplete="off" class="form-control"  type="text" name="sellermortgage" placeholder="Name">
+
+                    <input autocomplete="off" class="form-control"  type="text" name="sellermortgageaddress" placeholder="Full Address">
+
+                    <input autocomplete="off" class="form-control"  type="tel" name="sellermortgagephone" placeholder="Phone #">
+
+                    <input autocomplete="off" class="form-control"  type="email" name="sellermortgageemail" placeholder="Email">
+
+                </div>
+                <div class="col-md-4">
+                    <p style="font-weight:400; margin-top:10px; margin-bottom:-1px">CO-OPERATING BROKER</p>
+                    <input autocomplete="off" class="form-control"  type="text" name="coopagentname" placeholder="Name(s)">
+
+                    <input autocomplete="off" class="form-control"  type="text" name="coopagentbrokerage" placeholder="Brokerage">
+
+                    <input autocomplete="off" class="form-control"  type="text" name="coopagentaddress" placeholder="Full Address">
+
+                    <input autocomplete="off" class="form-control"  type="tel" name="coopagentphone" placeholder="Phone #">
+
+                    <input autocomplete="off" class="form-control"  type="email" name="coopagentemail" placeholder="Email">
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row text-center">
+        <div class="col-md-12 p-3">
+            <input autocomplete="off" type="submit" id="submit" class="btn btn-outline-dark btn-lg" value="SUBMIT">
+        </div>
+
+    </div>
+</form>
+</div>
+<script>const userJSON = {{ user_json | safe }}</script>
+<script src="static/js/scripts/tradeinput.js"></script>
+</body>
+</html>

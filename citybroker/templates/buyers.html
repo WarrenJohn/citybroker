@@ -1,0 +1,208 @@
+<head>{% include "head.html" %}
+<title>Buyers - CityBroker Real Estate Ltd. Brokerage - London, ON</title>
+</head>
+{% include "headerlanding.html" %}
+<body>
+
+<div class="py-5 opaque-overlay" style="background-image: url(&quot;static/images/pexels-photo-301643.jpeg&quot;);background-repeat: no-repeat;">
+    <div class="container">
+      <div class="row">
+        <div class="align-self-center col-md-6 text-white">
+          <h1 style="text-shadow: 2px 1px 5px black" class="text-left display-3 mb-4"><b>citybroker</b></h1>
+		  <p style="text-shadow: 2px 1px 5px black" class="lead"><strong><b>Real Estate Ltd. Brokerage</b></strong></p>
+          <h2 style="text-shadow: 2px 1px 5px black"><b>2.5% Total Commission + HST</b></h2>
+		  <p style="text-shadow: 2px 1px 5px black" class="lead"><b>Includes Buyer's and Listing Agents Fee</b></p>
+
+        </div>
+        <div class="col-md-6" id="book">
+          <div class="card">
+            <div class="card-body p-5 text-center" id="buyers">
+
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                {% for message in messages %}
+                <p style="color: red">{{ message }}</p>
+                {% endfor %}
+                {% endif %}
+                {% endwith %}
+
+            <h2>Home Search</h2>
+<!-- Form p1 -->
+            <form action="" method="POST" id="buyers-form">
+<div id="one">
+                <h4>Areas</h4>
+                <p class="lead"><b>Are You:</b></p>
+                <div>
+                <input type="radio" name="buysell" value="Buying" id="buy" required=""> <label for="buy">Buying</label>
+                <input type="radio" name="buysell" value="Selling" id="sell" required=""> <label for="sell">Selling</label><br />
+                <input type="radio" name="buysell" value="Buying and Selling" id="buysell" required=""> <label for="buysell"> Buying and Selling</label>
+                </div>
+                <input type="radio" name="areas" value="All Areas" id="all" required> <label for="all">All Areas</label><br />
+                <div>
+                <input type="radio" name="areas" value="North London" id="north" required> <label for="north">North London</label>
+                <input type="radio" name="areas" value="South London" id="south" required> <label for="south">South London</label><br />
+                <input type="radio" name="areas" value="East London" id="east" required> <label for="east">East London</label>
+                <input type="radio" name="areas" value="West London" id="west" required> <label for="west">West London</label>
+				</div>
+                <p class="lead">Select Your Price Range And Property Type</p>
+                <div> <select name="minprice" required="" class="form-control">
+						<option value="-1">Select Min Price</option>
+						<option value="25000">$25,000</option>
+						<option value="50000">$50,000</option>
+						<option value="75000">$75,000</option>
+						<option value="100000">$100,000</option>
+						<option value="125000">$125,000</option>
+						<option value="150000">$150,000</option>
+						<option value="175000">$175,000</option>
+						<option value="200000">$200,000</option>
+						<option value="225000">$225,000</option>
+						<option value="250000">$250,000</option>
+						<option value="275000">$275,000</option>
+						<option value="300000">$300,000</option>
+						<option value="325000">$325,000</option>
+						<option value="350000">$350,000</option>
+						<option value="375000">$375,000</option>
+						<option value="400000">$400,000</option>
+						<option value="425000">$425,000</option>
+						<option value="450000">$450,000</option>
+						<option value="475000">$475,000</option>
+						<option value="500000">$500,000</option>
+						<option value="550000">$550,000</option>
+						<option value="600000">$600,000</option>
+						<option value="650000">$650,000</option>
+						<option value="700000">$700,000</option>
+						<option value="750000">$750,000</option>
+						<option value="800000">$800,000</option>
+						<option value="850000">$850,000</option>
+						<option value="900000">$900,000</option>
+						<option value="950000">$950,000</option>
+						<option value="1000000">$1,000,000</option>
+						<option value="1100000">$1,100,000</option>
+						<option value="1200000">$1,200,000</option>
+						<option value="1300000">$1,300,000</option>
+						<option value="1400000">$1,400,000</option>
+						<option value="1500000">$1,500,000</option>
+						<option value="1600000">$1,600,000</option>
+						<option value="1700000">$1,700,000</option>
+						<option value="1800000">$1,800,000</option>
+						<option value="1900000">$1,900,000</option>
+						<option value="2000000">$2,000,000</option>
+						<option value="2500000">$2,500,000</option>
+						<option value="3000000">$3,000,000</option>
+						<option value="4000000">$4,000,000</option>
+						<option value="5000000">$5,000,000</option>
+						<option value="7500000">$7,500,000</option>
+						<option value="10000000">$10,000,000</option>
+						</select>
+						</div>
+                 <div><select name="maxprice" required="" class="form-control">
+						<option value="-1">Select Max Price</option>
+                        <option value="25000">$25,000</option>
+						<option value="50000">$50,000</option>
+						<option value="75000">$75,000</option>
+						<option value="100000">$100,000</option>
+						<option value="125000">$125,000</option>
+						<option value="150000">$150,000</option>
+						<option value="175000">$175,000</option>
+						<option value="200000">$200,000</option>
+						<option value="225000">$225,000</option>
+						<option value="250000">$250,000</option>
+						<option value="275000">$275,000</option>
+						<option value="300000">$300,000</option>
+						<option value="325000">$325,000</option>
+						<option value="350000">$350,000</option>
+						<option value="375000">$375,000</option>
+						<option value="400000">$400,000</option>
+						<option value="425000">$425,000</option>
+						<option value="450000">$450,000</option>
+						<option value="475000">$475,000</option>
+						<option value="500000">$500,000</option>
+						<option value="550000">$550,000</option>
+						<option value="600000">$600,000</option>
+						<option value="650000">$650,000</option>
+						<option value="700000">$700,000</option>
+						<option value="750000">$750,000</option>
+						<option value="800000">$800,000</option>
+						<option value="850000">$850,000</option>
+						<option value="900000">$900,000</option>
+						<option value="950000">$950,000</option>
+						<option value="1000000">$1,000,000</option>
+						<option value="1100000">$1,100,000</option>
+						<option value="1200000">$1,200,000</option>
+						<option value="1300000">$1,300,000</option>
+						<option value="1400000">$1,400,000</option>
+						<option value="1500000">$1,500,000</option>
+						<option value="1600000">$1,600,000</option>
+						<option value="1700000">$1,700,000</option>
+						<option value="1800000">$1,800,000</option>
+						<option value="1900000">$1,900,000</option>
+						<option value="2000000">$2,000,000</option>
+						<option value="2500000">$2,500,000</option>
+						<option value="3000000">$3,000,000</option>
+						<option value="4000000">$4,000,000</option>
+						<option value="5000000">$5,000,000</option>
+						<option value="7500000">$7,500,000</option>
+						<option value="10000000">$10,000,000+</option>
+						</select>
+						</div>
+						<div><select name="bedrooms" class="form-control" required="">
+						<option value="-1">Select Bedrooms</option>
+						<option value="1">1+</option>
+						<option value="2">2+</option>
+						<option value="3">3+</option>
+						<option value="4">4+</option>
+						<option value="5">5+</option>
+						<option value="6">6+</option>
+						</select></div>
+                <div> <select name="bathrooms" class="form-control" required="">
+						<option value="-1">Select Bathrooms</option>
+						<option value="1">1+</option>
+						<option value="2">2+</option>
+						<option value="3">3+</option>
+						<option value="4">4+</option>
+						<option value="5">5+</option>
+						<option value="6">6+</option>
+						</select></div>
+                <p class="lead"> Property Type</p>
+                <div><input type="radio" name="propertytype" value="Single Family" id="sfr" required> <label for="sfr">Single Family</label>
+                <input type="radio" name="propertytype" value="Condominium" id="condo" required> <label for="condo">Condominium</label>
+                <input type="radio" name="propertytype" value="Multi-Family" id="mfr" required> <label for="mfr">Multi-Family</label>
+                </div>
+                <div><input type="button" value="Next" class="btn btn-lg mx-1 btn-primary" id="button-one"> </div>
+</div>
+<!-- Form p2  -->
+<div id="two">
+            <h4>Details</h4>
+            <p class="lead mb-4"><strong>Start your Free Home Search</strong> </p>
+              <div><input type="text" name="firstname" id="firstname" value="" size="40" placeholder="First Name" class="form-control" required></div>
+
+              <div><input type="text" name="lastname" id="lastname" value="" size="40" placeholder="Last Name" class="form-control" required></div>
+
+              <div><input type="email" name="email" id="email" value="" size="40" placeholder="Email" required="" class="form-control" required></div>
+
+              <div><input type="tel" name="phonenumber" id="phonenumber" value="" size="40" placeholder="Phone # (optional)" class="form-control"></div>
+
+              <div><input type="text" name="city" id="city" value="" size="40" class="form-control" placeholder="City" required=""></div>
+
+              <div><input type="text" name="streetaddress" id="streetaddress" value="" size="40" class="form-control" placeholder="Street Address"></div>
+
+              <div><b>Would you like to receive automatic listing updates for this criteria?</b></div>
+              <div><input type="radio" name="emailupdates" value="Yes" id="yes" required> <label for="yes">Yes</label>
+              <input type="radio" name="emailupdates" value="No" id="no" required> <label for="no">No</label></div>
+
+              <div><input type="button" value="Back" class="btn btn-lg mx-1 btn-primary" id="button-back">
+                   <input type="button" value="Search for Homes" class="btn btn-lg mx-1 btn-primary" id="button-two">
+              </div>
+</div>
+               </form>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<script src="/static/js/scripts/buyers.js"></script>
+</body>
+{% include "footer.html" %}

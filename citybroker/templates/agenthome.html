@@ -1,0 +1,34 @@
+
+<head>
+ {% include "agenthead.html" %}
+  <title>Home - CityBroker Real Estate Ltd. Brokerage - London, ON</title></head>
+{% include "headeragent.html" %}
+<body>
+
+  <center>
+    <br>
+    <h1>Existing Trades</h1>
+        <div>
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            {% for message in messages %}
+            <p style="color: red"><b>{{ message }}</b></p>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+            <p id="agent-name">Welcome</p>
+            <p>Agent ID #: <b id="agent-id"></b></p>
+        </div>
+        </center>
+
+<div class="container py-2">
+    <div class="row py-2" id="trades">
+
+    </div>
+</div>
+<script>const userJSON = {{ user_json | safe }} </script>
+<script src="static/js/scripts/agenthome.js"></script>
+
+</body>
+
+</html>

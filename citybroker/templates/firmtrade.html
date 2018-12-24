@@ -1,0 +1,78 @@
+
+<html>
+
+<head>
+  {% include "agenthead.html" %}
+  <title>Firm Up Trade - CityBroker Real Estate Ltd. Brokerage - London, ON</title>
+</head>
+{% include "headeragent.html" %}
+<body>
+
+  <center>
+    <br>
+    <h1> Firm up Trade </h1>
+    <br>
+	<div class="form-group">
+      <form action="/modifytrade">
+        <input type="hidden" style="width: 40px" ;="" name="back">
+        <input type="submit" class="btn btn-primary" value="<- Back"> </form>
+    </div>
+    <br>
+    <table>
+      <tbody>
+        <tr>
+          <th>CITYBROKER REAL ESTATE LTD.</th>
+          <th>{{ cityagent }}</th>
+          <th><b>Trade #</b> {{ trade }}</th>
+        </tr>
+        <tr>
+          <td>{{ address }}</td>
+          <td><b>MLS:</b> {{ mls }}</td>
+          <td>{{ saleprice }}</td>
+        </tr>
+        <tr>
+          <td><b>Offer Date:</b>
+            <br> {{ offerdate }}</td>
+          <td><b>Acceptance Date:</b>
+            <br> {{ acceptancedate }}</td>
+          <td><b>Firm Date:</b>
+            <br> {{ firmdate }}</td>
+        </tr>
+        <tr>
+          <td><b>Close Date:</b>
+            <br> {{ closedate }}</td>
+          <td><b>Deposit:</b>
+            <br> {{ deposit }}</td>
+          <td><b>Deposit Held:</b>
+            <br> {{ depositheld }}</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><b>Status: <br>{{ endresult }}</b></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><b><u>Condition</u></b></td>
+          <td></td>
+        </tr> {% for condition in conditions %}
+        <tr>
+          <td></td>
+          <td> <b style="color:red">{{ condition[0] }}</b>
+            <div class="form-group">
+              <form action="" method="POST">
+                <input type="date" style="width: 225px" ;="" name="{{ condition[1] }}" placeholder="Condition Met Date">
+                <input type="submit" class="btn btn-primary" value="Update">
+              </form>
+            </div>
+			<b>Due Date:</b> {{ conditionduedatelist[loop.index0] }}
+            <br> <b>Met Date:</b> {{ conditionmetdatelist[loop.index0] }}
+            <br>________ </td>
+          <td></td>
+        </tr> {% endfor %}
+      </tbody>
+    </table>
+  </center>
+</body>
+
+</html>

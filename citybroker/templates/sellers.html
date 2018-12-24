@@ -1,0 +1,156 @@
+<head>
+{% include "head.html" %}
+<title>Sellers - CityBroker Real Estate Ltd. Brokerage - London, ON</title>
+</head>
+{% include "headerlanding.html" %}
+<body>
+
+<div class="py-5 opaque-overlay" style="background-image: url(&quot;static/images/pexels-photo-227389.jpeg&quot;);background-repeat: no-repeat;">
+    <div class="container">
+      <div class="row">
+        <div class="align-self-center col-md-6 text-white">
+          <h1 style="text-shadow: 2px 1px 5px black" class="text-left display-3 mb-4 headershadow"><b>citybroker</b></h1>
+		  <p style="text-shadow: 2px 1px 5px black" class="lead"><strong><b>Real Estate Ltd. Brokerage</b></strong></p>
+          <h2 style="text-shadow: 2px 1px 5px black"><b>2.5% Total Commission + HST</b></h2>
+		  <p style="text-shadow: 2px 1px 5px black" class="lead"><b>Includes Buyer's and Listing Agents Fee</b></p>
+
+        </div>
+        <div class="col-md-6" id="book">
+          <div class="card">
+            <div class="card-body p-5">
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                {% for message in messages %}
+                <p style="color: red">{{ message }}</p>
+                {% endfor %}
+                {% endif %}
+                {% endwith %}
+              <h1 class="text-gray-dark">Your Homes Value</h1>
+          <form action="" method="POST">
+<!-- Form p1 -->
+<div id="one">
+          <p class="lead mb-4">Find out how much your is House Worth</p>
+            <div class="form-group"> <label>Address</label>
+              <input type="text" name="Address" class="form-control" placeholder="Address" required> </div>
+            <div class="form-group"> <label>Your City</label>
+              <input type="text" name="City" class="form-control" placeholder="City" required> </div>
+			  <br>
+			  <select name="typeofhome" class="form-control" required="">
+						<option value="Single Family / Residential Home">Single Family / Residential Home</option>
+						<option value="Multi-Family Building">Multi-Family Building</option>
+						<option value="Townhouse">Townhouse</option>
+						<option value="Condo">Condo</option>
+						</select>
+                <br>
+				<select name="bedrooms" class="form-control" required="">
+						<option value="-1">Select Bedrooms</option>
+						<option value="1">1+</option>
+						<option value="2">2+</option>
+						<option value="3">3+</option>
+						<option value="4">4+</option>
+						<option value="5">5+</option>
+						<option value="6">6+</option>
+						</select>
+                <br> <select name="bathrooms" class="form-control" required="">
+						<option value="-1">Select Bathrooms</option>
+						<option value="1">1+</option>
+						<option value="2">2+</option>
+						<option value="3">3+</option>
+						<option value="4">4+</option>
+						<option value="5">5+</option>
+						<option value="6">6+</option>
+						</select>
+                <br>
+            <div><button type="button" class="btn btn-primary" id="button-one">Find out now for Free</button></div>
+</div>
+
+<!-- Form p2 -->
+<div id="two">
+          <p class="lead mb-4">Property Information</p>
+          <input type="text" name="firstname" value="" size="40" placeholder="First Name" class="form-control" required>
+            <br>
+            <input type="text" name="lastname" value="" size="40" placeholder="Last Name" class="form-control" required>
+            <br>
+            <input type="email" name="email" value="" size="40" placeholder="Email" required="" class="form-control">
+            <br>
+            <input type="tel" name="phonenumber" value="" size="40" placeholder="Phone # (optional)" class="form-control">
+            <br>
+              <select name="residentstatus" class="form-control" required="">
+                      <option value="Primary Residence">Primary Residence</option>
+                      <option value="Secondary Residence">Secondary Residence</option>
+                      <option value="Vacation Home">Vacation Home</option>
+                      <option value="Rental Property">Rental Property</option>
+                      </select>
+              <br>
+              <select name="relationship" class="form-control" required="">
+                      <option value="Legal Owner">Legal Owner</option>
+                      <option value="Renter">Renter</option>
+                      <option value="Property Manager">Property Manager</option>
+                      <option value="Potential Buyer">Potential Buyer</option>
+                      </select>
+              <br>
+              <label for="planningtosell">Planning to sell:</label>
+              <select name="planningtosell" class="form-control" required="">
+                      <option value="Now">Now</option>
+                      <option value="1-3 Months">1-3 Months</option>
+                      <option value="3-6 Months">3-6 Months</option>
+                      <option value="6+ Months">6+ Months</option>
+                      <option value="Just Looking">Just Looking</option>
+                      </select><br>
+                      <label for="listingstatus">Listing Status:</label>
+                      <select name="listingstatus" class="form-control" required="">
+                      <option value="Not Currently Listed">Not Currently Listed</option>
+                      <option value="For Sale By Owner">For Sale By Owner</option>
+                      <option value="Currently Listed with an Agent / Brokerage">Currently Listed with an Agent / Brokerage</option>
+                      </select>
+                    <div><br />
+                        <input type="button" value="Back" class="btn btn-primary" id="button-back">
+                        <input type="button" value="Search for Homes" class="btn btn-primary" id="button-two">
+
+                        </div>
+</div>
+
+          </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<br>
+  <div class="">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 align-self-center text-center p-4"> <i class="d-block  fa fa-home fa-5x"></i>
+          <h3 class="my-2">100% Free Quotes</h3>
+          <p class="">Get a free in-home evaluation, and find out how much your house is worth</p>
+        </div>
+        <div class="col-md-4 align-self-center text-center p-4"> <i class="d-block  fa fa-5x fa-signal"></i>
+          <h3 class="my-2">Full Service</h3>
+          <p class="">Save money and get full service when you sell your home with citybroker.</p>
+        </div>
+        <div class="col-md-4 align-self-center text-center p-4"> <i class="d-block  fa fa-5x fa-blind"></i>
+          <h3 class="my-2">No Hidden Fees</h3>
+          <p class="">The total commission is 2.5% + HST. There are no additional fees.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br><br>
+    <div class="py-5 text-white opaque-overlay" style="background-image: url(&quot;static/images/pexels-photo-446169.jpeg&quot;);background-repeat: no-repeat;">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <p style="text-shadow: 2px 1px 5px black" class="lead"><i>"Warren got my home sold while I was out of province and I always felt reassured that everything was being well taken care of in my absence. Warren is dilligent, trustworthy and I highly recommend him as an agent."</i>
+            <br> </p>
+          <p style="text-shadow: 2px 1px 5px black" class="lead m-0"><b>Deneice Williams</b></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script src="static/js/scripts/sellers.js"></script>
+
+</body>
+
+{% include "footer.html" %}

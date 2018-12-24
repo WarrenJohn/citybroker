@@ -1,0 +1,214 @@
+<html><head>
+<link rel="shortcut icon" href="/static/favicon.ico" >
+<meta charset="utf-8">
+<title>Trade Record</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="static/css/citybroker.css">
+<title>Trade Record - CityBroker Real Estate Ltd. Brokerage - London, ON</title>
+</head>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h2>CITYBROKER REAL ESTATE LTD.</h2>
+                    <p style="margin:-1;padding:-1;font-weight:400" id="">PROPERTY</p>
+                    <p style="margin:-1;padding:-1" id="endtype">End: </p>
+                    <p style="margin:-1;padding:-1" id="transactiontype">Transaction Type: </p>
+                    <p style="margin:-1;padding:-1" id="status">Status: </p>
+                    <p style="margin:-1;padding:-1" id="tradenum">TRADE # </p>
+                    <p style="margin:-1;padding:-1" id="mls">MLS # </p>
+                    <p style="margin:-1;padding:-1" id="address"></p>
+                    <p style="margin:-1;padding:-1" id="offerdate">Offer Date: </p>
+                    <p style="margin:-1;padding:-1" id="firmdate">Firm Date: </p>
+                    <p style="margin:-1;padding:-1" id="entrydate">Entry Date: </p>
+                    <p style="margin:-1;padding:-1" id="closedate">Close Date: </p>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <p style="margin:-1;padding:-1;font-weight:400">TOTAL INCOME</p>
+                            <div class="dropdown-divider"></div>
+                            <p style="margin:-1;padding:-1"><b><u>Sub-Total</b></u></p>
+                            <p style="margin:-1;padding:-1" id="subtotal"></p>
+                            <p style="margin:-1;padding:-1"><b><u>HST</b></u></p>
+                            <p style="margin:-1;padding:-1" id="hst"></p>
+                            <p style="margin:-1;padding:-1"><b><u>Total</b></u></p>
+                            <p style="margin:-1;padding:-1" id="total"></p>
+                            <div class="dropdown-divider"></div>
+                        </div>
+                        <div class="col-md-4">
+                            <p style="margin:-1;padding:-1"><b>EXPENSES</b></p>
+                            <div class="dropdown-divider"></div>
+                            <div id="expenses-div"></div>
+                        </div>
+                        <div class="col-md-4">
+                            <p style="margin:-1;padding:-1"><b>CITYBROKER AGENTS</b>
+                            <div class="dropdown-divider"></div>
+                            <p style="margin:-1;padding:-1;font-weight:400" id="agentname"></p>
+                            <p style="margin:-1;padding:-1"><b><u>Sub-Total</b></u></p>
+                            <p style="margin:-1;padding:-1" id="endsubtotal"></p>
+                            <p style="margin:-1;padding:-1"><b><u>HST</b></u></p>
+                            <p style="margin:-1;padding:-1" id="endhst"></p>
+                            <p style="margin:-1;padding:-1"><b><u>Total</b></u></p>
+                            <p style="margin:-1;padding:-1" id="endtotal"></p>
+                            <div class="dropdown-divider"></div>
+                            <div id="internal-div"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <p style="margin:0;padding:0;font-weight:400">BUYER</p>
+                <div class="dropdown-divider"></div>
+                <p style="margin:0;padding:0" id="buyer"></p>
+                <p style="margin:0;padding:0" id="buyerphone"></p>
+                <p style="margin:0;padding:0" id="buyeremail"></p>
+                <p style="margin:0;padding:0" id="buyeraddress"></p>
+                <p style="margin:-1;padding:-1;font-weight:400">BUYER'S LAWYER</p>
+                <p style="margin:-1;padding:-1"id="buyerlawyer"></p>
+                <p style="margin:-1;padding:-1"id="buyerlawyerphone"></p>
+                <p style="margin:-1;padding:-1"id="buyerlawyeraddress"></p>
+                <p style="margin:-1;padding:-1"id="buyerlawyeremail"></p>
+                <div class="dropdown-divider"></div>
+                <p style="margin:-1;padding:-1;font-weight:400">SELLER</p>
+                <div class="dropdown-divider"></div>
+                <p style="margin:-1;padding:-1"id="seller"></p>
+                <p style="margin:-1;padding:-1"id="sellerphone"></p>
+                <p style="margin:-1;padding:-1"id="selleraddress"></p>
+                <p style="margin:-1;padding:-1"id="selleremail"></p>
+                <p style="margin:-1;padding:-1;font-weight:400">SELLER'S LAWYER</p>
+                <p style="margin:-1;padding:-1"id="sellerlawyer"></p>
+                <p style="margin:-1;padding:-1"id="sellerlawyerphone"></p>
+                <p style="margin:-1;padding:-1"id="sellerlawyeraddress"></p>
+                <p style="margin:-1;padding:-1"id="sellerlawyeremail"></p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                        <div class="col-md-6">
+                            <p style="margin:-1;padding:-1;font-weight:400">DEPOSIT</p>
+                            <div class="dropdown-divider"></div>
+                            <p style="margin:-1;padding:-1">In Trust</p>
+                            <p style="margin:-1;padding:-1"><b><u>Date Received</b></u></p>
+                            <p style="margin:-1;padding:-1" id="depositreceiveddate"></p>
+                            <p style="margin:-1;padding:-1"><b><u>Amount</b></u></p>
+                            <p style="margin:-1;padding:-1" id="depositamt"></p>
+                            <p style="margin:-1;padding:-1"><b><u>Held by</b></u></p>
+                            <p style="margin:-1;padding:-1" id="depositaccount"></p>
+                            <p style="margin:-1;padding:-1"><b><u>Received From</b></u></p>
+                            <p style="margin:-1;padding:-1" id="depositreceivedfrom"></p>
+                            <p style="margin:-1;padding:-1"><b><u>Interest</b></u></p>
+                            <p style="margin:-1;padding:-1" id="depositinterest"></p>
+                            <p style="margin:-1;padding:-1"><b><u>Received</b></u></p>
+                            <p style="margin:-1;padding:-1" id="depositreceived"></p>
+                            <p style="margin:-1;padding:-1"><b><u>Cheque #</b></u></p>
+                            <p style="margin:-1;padding:-1" id="chequenum"></p>
+                            <p style="margin:-1;padding:-1"><b><u>Date Disbursed</b></u></p>
+                            <p style="margin:-1;padding:-1" id="depositdisbursed"></p>
+                        </div>
+                    <div class="col-md-6">
+                        <p style="margin:-1;padding:-1;font-weight:400">FINANCIAL</p>
+                        <div class="dropdown-divider"></div>
+                        <p style="margin:-1;padding:-1"><b><u>Selling Price </b></u></p> <p style="margin:-1;padding:-1" id="saleprice"></p>
+                        <p style="margin:-1;padding:-1"><b><u>Listing Comm. </b></u></p><p style="margin:-1;padding:-1" id="listingcomm"></p>
+                        <p style="margin:-1;padding:-1" id="sellerrebate">Seller Rebate: </p>
+                        <p style="margin:-1;padding:-1"><b><u>Selling Comm. </u></b></p>
+                        <p style="margin:-1;padding:-1" id="buyercomm"></p>
+                        <p style="margin:-1;padding:-1" id="buyerrebate">Buyer Rebate: </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <div id="agent-div"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-body">
+                <p style="margin:-1;padding:-1">It is understood between all parties that this agreement shall constitute a Commission Trust Agreement as set out in the contract</p>
+                <p style="margin:-1;padding:-1">To the best of my knowledge the above information is correct. Dated at London on  today  </p>
+
+                <p id=""># employeenum  -  emptype :   cityagent</p>
+                <p>Signature: __________________________________________________________</p>
+
+                for employee in cityagentreferrallist
+
+                <p id=""># employee[0] </p>
+                <p>Signature: __________________________________________________________</p>
+                endfor
+
+                <p>Broker of Record: CITYBROKER REAL ESTATE LTD.</p>
+                <p>Signature: __________________________________________________________</p>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h2>CONDITIONS</h2>
+
+                <p style="margin:-1;padding:-1"><b><u>Condition</b></u></p>
+                <p style="margin:-1;padding:-1"><b><u>Condition Due Date</b></u></p>
+                <p style="margin:-1;padding:-1"><b><u>Condition Met Date</b></u></p>
+
+               for condition in conditions
+
+                <p style="margin:-1;padding:-1" id="">   condition</p>
+                <p style="margin:-1;padding:-1" id="">  conditionduedatelist[loop.index0]</p>
+                <p style="margin:-1;padding:-1" id="">  conditionmetdatelist[loop.index0]</p>
+               endfor
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h2>FILE REQUIREMENTS</h2>
+                <p style="margin:-1;padding:-1">Document</p>
+                <p style="margin:-1;padding:-1">Due Date</p>
+                <p style="margin:-1;padding:-1">Completed Date</p>
+                <p style="margin:-1;padding:-1" id="">doc info here</p>
+                <p style="margin:-1;padding:-1" id="">date info here</p>
+                <p style="margin:-1;padding:-1" id="">date info here</p>
+            </div>
+        </div>
+    </div>
+
+</div> -->
+
+<script>const tradeJSON = {{ trade_json | safe }}</script>
+<script src="static/js/scripts/traderecord.js"></script>
+
+
+</div>
+
+</html>

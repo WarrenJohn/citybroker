@@ -1,0 +1,63 @@
+<head>
+{% include "agenthead.html" %}
+<title>CityBroker Real Estate LTD. - London, ON</title></head>
+{% include "headeragent.html" %}
+<body>
+<form method="POST" enctype="multipart/form-data" id="listinginput">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-md-4">
+                <input autocomplete="off" class="form-control"  type="text" pattern="\d*" name="mls" placeholder="*MLS #" required="">
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-light " for="forsale" id="lforsale"><input autocomplete="off"  class="form-control"  type="radio" name="status" id="forsale" value="for sale" required="">For Sale</label>
+                    <label class="btn btn-light" for="pending" id="lpending"><input autocomplete="off"  class="form-control"  type="radio" name="status" id="pending" value="pending" required="">Pending Sale</label>
+                    <label class="btn btn-light" for="sold" id="lsold"><input autocomplete="off"  class="form-control"  type="radio" name="status" id="sold" value="sold" required="">Sold</label>
+                </div>
+                <input autocomplete="off" class="form-control"  type="text" name="address" placeholder="*Full Property Address" required="">
+                <input autocomplete="off" class="form-control"  type="text" pattern="\d*" name="price" placeholder="*Price (numbers only)" required="">
+                <div>
+                    <select id="beds" name="bedrooms" class="form-control" required="">
+						<option value="-1">Select Bedrooms</option>
+						<option value="1">1+</option>
+						<option value="2">2+</option>
+						<option value="3">3+</option>
+						<option value="4">4+</option>
+						<option value="5">5+</option>
+						<option value="6">6+</option>
+				    </select>
+                </div>
+                <div>
+                    <select id="baths" name="bathrooms" class="form-control" required="">
+						<option value="-1">Select Bathrooms</option>
+						<option value="1">1+</option>
+						<option value="2">2+</option>
+						<option value="3">3+</option>
+						<option value="4">4+</option>
+						<option value="5">5+</option>
+						<option value="6">6+</option>
+					</select>
+                </div>
+                <div>
+                    <p style="margin-top:10px; margin-bottom:-1px">Image Types Accepted:</p>
+                    <p><b>'jpg', 'jpe', 'jpeg', 'png', 'gif', 'svg', 'bmp'</b></p>
+                </div>
+                <div>
+                    <p style="margin-top:10px; margin-bottom:-1px">Main Photo</p><input class="form-control" type="file" name="mainphoto" accept="image/*" required />
+                    <p style="margin-top:10px; margin-bottom:-1px">Listing Photos</p><input class="form-control" type="file" name="photos" accept="image/*" multiple />
+                </div>
+            </div>
+            <div class="col md-8">
+                <textarea autocomplete="off" class="form-control"  form="listinginput" pattern="\d*" name="description" placeholder="*Description" required=""></textarea>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-md-12 p-3">
+                <input autocomplete="off" type="button" id="submit" class="btn btn-outline-dark btn-lg" value="SUBMIT">
+            </div>
+
+        </div>
+    </div>
+</form>
+<script src="static/js/scripts/listinginput.js"></script>
+</body>
+</html>

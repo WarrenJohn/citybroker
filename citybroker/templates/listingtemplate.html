@@ -1,0 +1,40 @@
+<head>
+{% include "head.html" %}
+<script>const listingJSON = {{ listing_json | safe }}</script>
+<script src="{{ url_for('static', filename='js/scripts/listingdata.js')}}" async></script>
+<title id="title"></title>
+</head>
+{% include "headerbig.html" %}
+<body>
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="display-1" id="address"></h1>
+          <h1 id="mls">
+          <h1 id="price-beds-bath"></h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <p class="lead" id="status"></p><p id="description"></p>
+        </div>
+        <div class="p-0 col-md-8">
+          <img class="img-fluid d-block" src="#" id="main_pic"> </div>
+
+      </div>
+    </div>
+  </div>
+
+   <div>
+    <div class="container-fluid">
+      <div class="row" id="listing_pics">
+	   <!-- for pic in photos
+        <div class="p-0 col-md-4 col-6">
+          <img src="#" class="img-fluid"> </div>
+	   endfor -->
+    </div>
+  </div>
+
+</body>
+{% include "footer.html" %}

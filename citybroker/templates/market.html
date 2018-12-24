@@ -1,0 +1,56 @@
+<div class="py-1 text-center">
+  <div class="container py-5">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="">Discover market trends in London, Ontario</h1><br><br>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-body">
+            <h4>Current market outlook</h4>
+            <h6 id="market"></h6>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row p-2">
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-header"> New Listings (7 days)</div>
+          <div class="card-body">
+            <h4 id="new_seven"></h4>
+            <!--<h6 class="text-muted">need to add the 3 categories manually</h6>-->
+            <p>Brand new listings introduced on the market. Does not include re-listed property.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-header"> Conditional Sales (7 days)</div>
+          <div class="card-body">
+            <h4 id="cond_seven"></h4>
+            <!--<h6 class="text-muted">Subtitle</h6>-->
+            <p>The fewer conditonally sold homes, typically the hotter the market.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-header"> Sold Listings (7 days)</div>
+          <div class="card-body">
+            <h4 id="sold_seven"></h4>
+            <!--<h6 class="text-muted">Subtitle</h6>-->
+            <p>The amount of homes sold in the last week. Includes homes that were conditionally sold.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+    <div class="col-md-12 py-3"><br><br>
+      <a href="{{ url_for('insights') }}" class="btn btn-outline-primary">Explore Market Insights</a>
+    </div>
+    </div>
+  </div>
+</div>

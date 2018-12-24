@@ -1,0 +1,79 @@
+<head>
+{% include "agenthead.html" %}
+<title>Upload Documents - CityBroker Real Estate Ltd. Brokerage - London, ON</title>
+</head>
+{% include "headeragent.html" %}
+<body>
+<form method="post" enctype="multipart/form-data">
+    <div class="container text-center py-3">
+    <h1>Upload Trade Documents</h1>
+        <div class="row py-2">
+            <div class="col-md-4">
+                <p style="font-weight:400">CITYBROKER REAL ESTATE LTD.</p>
+                <p style="margin:-1;padding:-1" id="tradenum">Trade # </p>
+                <p style="margin:-1;padding:-1" id="address"></p>
+                <p style="margin:-1;padding:-1" id="mls">MLS: </p>
+                <p style="margin:-1;padding:-1" id="saleprice"></p>
+            </div>
+            <div class="col-md-4">
+                <p style="font-weight:400;margin:-1;padding:-1">Offer Date:</p>
+                <p style="margin:-1;padding:-1" id="offerdate"></p>
+                <p style="font-weight:400;margin:-1;padding:-1">Acceptance Date:</p>
+                <p style="margin:-1;padding:-1" id="acceptancedate"></p>
+                <p style="font-weight:400;margin:-1;padding:-1">Firm Date:</p>
+                <p style="margin:-1;padding:-1" id="firmdate"></p>
+            </div>
+            <div class="col-md-4">
+                <p style="font-weight:400;margin:-1;padding:-1">Close Date:</p>
+                <p style="margin:-1;padding:-1;display:inline" id="closedate"></p>
+                <p style="font-weight:400;margin:-1;padding:-1">Deposit:</p>
+                <p style="margin:-1;padding:-1;display:inline" id="depositamt"></p>
+                <p style="font-weight:400;margin:-1;padding:-1">Deposit held by:</p>
+                <p style="margin:-1;padding:-1;display:inline" id="depositaccount"></p>
+                <p style="margin:-1;padding:-1;display:inline" id="status">Status: </p>
+            </div>
+        </div>
+        <div class="row py-2">
+            <div class="col-md-4">
+                <p style="font-weight:400;margin:-1;padding:-1">MLS Listing</p>
+                <input class="form-control py-2" type="file" name="mls">
+                <p style="font-weight:400;margin:-1;padding:-1">Agreement of Purchase and Sale
+            (Confirmation of Co-Operation to be included)</p>
+                <input class="form-control py-2" type="file" name="aps">
+                <p style="font-weight:400;margin:-1;padding:-1">Representation Agreement(Working with a Realtor, Buyer Rep, Listing Agreement, Data Input, etc...)</p>
+                <input class="form-control py-2" type="file" name="rep">
+
+            </div>
+            <div class="col-md-4">
+                <p style="font-weight:400;margin:-1;padding:-1">Amendments</p>
+                <input class="form-control py-2" class="form-control py-2" type="file" name="amend">
+                <p style="font-weight:400;margin:-1;padding:-1">Waivers</p>
+                <input class="form-control py-2" type="file" name="waiver">
+                <p style="font-weight:400;margin:-1;padding:-1">Notice of Fulfillments</p>
+                <input class="form-control py-2" type="file" name="nof">
+                <p style="font-weight:400;margin:-1;padding:-1">Offer Summary Document</p>
+                <input class="form-control py-2" type="file" name="801">
+                <p style="font-weight:400;margin:-1;padding:-1">Mutual Release</p>
+                <input class="form-control py-2" type="file" name="mutual">
+            </div>
+            <div class="col-md-4">
+
+                    <p style="font-weight:400;margin:-1;padding:-1">Deposit Cheque Copy</p>
+                    <input class="form-control py-2" type="file" name="depositcc">
+                    <p style="font-weight:400;margin:-1;padding:-1">FINTRAC - Receipt of Funds (CREA)</p>
+                    <input class="form-control py-2" type="file" name="fintracdeposit">
+                    <p style="font-weight:400;margin:-1;padding:-1">FINTRAC - Individual ID Record (CREA)</p>
+                    <input class="form-control py-2" type="file" name="fintracid">
+
+            </div>
+        </div>
+
+    <input autocomplete="off" type="submit" id="submit" class="btn btn-outline-dark btn-lg" value="UPLOAD">
+    </div>
+</form>
+
+<script>const tradeJSON = {{ trade_json | safe }}</script>
+<script src="static/js/scripts/upload.js"></script>
+</body>
+
+</html>

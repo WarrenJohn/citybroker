@@ -1,0 +1,479 @@
+<head>{% include "head.html" %}
+  <title>Market Insights - CityBroker Real Estate London, ON</title>
+</head>
+{% include "headerbig.html" %}
+<body>
+  <div class="py-1 text-center">
+    <div class="container py-4">
+      <div class="row m-2">
+        <div class="col-md-12">
+          <h1 class="">Discover market trends in London, Ontario</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-body">
+              <h4>Current market outlook</h4>
+              <h6 id="market">
+
+              </h6>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row p-2">
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-header"> New Listings (7 days)</div>
+            <div class="card-body">
+              <h4 id="new-seven"></h4>
+              <!-- <h6 >Subtitle</h6> -->
+              <!-- <p>Some quick example text to build on the card title .</p> -->
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-header"> Conditional Sales (7 days)</div>
+            <div class="card-body">
+              <h4 id="cond-seven"> </h4>
+              <!-- <h6 >Subtitle</h6> -->
+              <!-- <p>Some quick example text to build on the card title .</p> -->
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-header"> Sold Listings (7 days)</div>
+            <div class="card-body">
+              <h4 id="sold-seven"></h4>
+              <!-- <h6 >Subtitle</h6> -->
+              <!-- <p>Some quick example text to build on the card title .</p> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row p-0">
+        <div class="col-md-3">
+          <div class="card">
+            <div class="card-header"> Average Sale Price</div>
+            <div class="card-body">
+              <h4 id="city-avg">$</h4>
+              <h6 id="last14price">$</h6>
+              <p>Average home sale price across the entire city.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card">
+            <div class="card-header"> Average Days on the Market</div>
+            <div class="card-body">
+              <h4 id="city-avg-dom"></h4>
+              <h6 id="last14dom">Subtitle</h6>
+              <p>The amount of time a home spent on the market.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card">
+            <div class="card-header"> Average Time Conditional</div>
+            <div class="card-body">
+              <h4 id="time-cond"></h4>
+              <h6 id="last14cdom"> </h6>
+              <p>Amount of days it took buyers to remove purchase conditions.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card">
+            <div class="card-header"> Average List to Sale Price Ratio</div>
+            <div class="card-body">
+              <h4 id="avg-lsr"></h4>
+              <h6 id="last14lsr">Subtitle</h6>
+              <p>The selling price relative to asking price.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row m-3">
+        <div class="col-md-12">
+          <h1 class="">Today</h1>
+        </div>
+      </div>
+      <div class="row p-0">
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-header"> Today's New Listings</div>
+            <div class="card-body">
+              <h4 id="today-active"></h4>
+              <h6 class="text-muted" id="yday-active"></h6>
+              <p>Brand new listings introduced on the market. Does not include re-listed property.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-header"> Today's Conditional Sales</div>
+            <div class="card-body">
+              <h4 id="today-cond"></h4>
+              <h6 class="text-muted" id="yday-cond"></h6>
+              <p>The fewer conditonally sold homes, typically the hotter the market.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-header"> Today's Sales</div>
+            <div class="card-body">
+              <h4 id="today-sold"></h4>
+              <h6 class="text-muted" id="yday-sold"></h6>
+              <p>The amount of homes sold today. Includes conditionally sold homes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-1">
+    <div class="container">
+      <div class="row m-2">
+        <div class="col-md-12">
+          <h1 class="text-center">Visualized Data</h1>
+        </div>
+      </div>
+      <div class="py-2 row">
+        <div class="col-md-12">
+            <canvas id="cityAvg"></canvas>
+          <!-- <p class="">#
+            <br>
+            <br>GRAPH AVERAGE SALE PRICE OVER TIME
+            <br>
+            <br>#</p> -->
+        </div>
+      </div>
+      <div class="py-2 row">
+        <div class="col-md-12">
+            <canvas id="cityAvgDOM"></canvas>
+          <!-- <p class="">#
+            <br>
+            <br>GRAPH AVERAGE DOM OVER TIME
+            <br>
+            <br>#</p> -->
+        </div>
+      </div>
+      <div class="py-2 row">
+        <div class="col-md-12">
+              <canvas id="cityAvgCdom"></canvas>
+              <!-- <p class="">#<br>
+            <br>GRAPH AVERAGE LSR PRICE OVER TIME
+            <br>
+            <br>#</p> -->
+        </div>
+      </div>
+      <div class="py-2 row">
+        <div class="col-md-12">
+              <canvas id="cityAvgLSR"></canvas>
+              <!-- <p class="">#<br>
+            <br>GRAPH AVERAGE LSR PRICE OVER TIME
+            <br>
+            <br>#</p> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-1">
+    <div class="container">
+      <div class="row m-2">
+        <div class="col-md-12">
+          <h1 class="text-center">Neighbourhoods of London, Ontario</h1>
+        </div>
+      </div>
+      <div class="row p-1">
+        <div class="col-md-4 text-center">
+          <div class="card">
+            <div class="card-header"> North London</div>
+            <div class="card-body">
+              <h4 id="north-avg">$</h4>
+              <h6 id="last14north">Price increase/decrease % over time</h6>
+              <!--<p>Some quick example text to build on the card title .</p>-->
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 text-center">
+          <div class="card">
+            <div class="card-header"> South London</div>
+            <div class="card-body">
+              <h4 id="south-avg">$</h4>
+              <h6 id="last14south">Price increase/decrease % over time</h6>
+             <!-- <p>Some quick example text to build on the card title .</p>-->
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 text-center">
+          <div class="card">
+            <div class="card-header"> East London</div>
+            <div class="card-body">
+              <h4 id="east-avg">$</h4>
+              <h6 id="last14east">Price increase/decrease % over time</h6>
+              <!--<p>Some quick example text to build on the card title .</p>-->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row text-center">
+        <div class="col-md-4 px-5">
+          <div class="card">
+            <div class="card-header"> New Listings (7 days) </div>
+            <div class="card-body">
+              <h4 id="north-active"></h4>
+              <h6 class="text-muted" id="yday-north-active">Yesterday </h6>
+              <!--<p>Some quick example text to build on the card title .</p>-->
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 px-5">
+          <div class="card">
+            <div class="card-header"> New Listings (7 days) </div>
+            <div class="card-body">
+              <h4 id="south-active"> </h4>
+              <h6 class="text-muted" id="yday-south-active">Yesterday </h6>
+              <!--<p>Some quick example text to build on the card title .</p>-->
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 px-5">
+          <div class="card">
+            <div class="card-header"> New Listings (7 days) </div>
+            <div class="card-body">
+              <h4 id="east-active"></h4>
+              <h6 class="text-muted" id="yday-east-active">Yesterday </h6>
+              <!--<p>Some quick example text to build on the card title .</p>-->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row text-center">
+        <div class="col-md-4 px-5">
+          <div class="card">
+            <div class="card-header"> Average days on market (North)</div>
+            <div class="card-body">
+              <h4 id="north-avg-dom"></h4>
+              <!-- <h6 class="text-muted" id="yday-north-cond"></h6> -->
+              <!--<p>Some quick example text to build on the card title .</p>-->
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 px-5">
+          <div class="card">
+            <div class="card-header"> Average days on market (South) </div>
+            <div class="card-body">
+              <h4 id="south-avg-dom"></h4>
+              <!-- <h6 class="text-muted" id="yday-south-cond"></h6> -->
+              <!--<p>Some quick example text to build on the card title .</p>-->
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 px-5">
+          <div class="card">
+            <div class="card-header"> Average days on market (East) </div>
+            <div class="card-body">
+              <h4 id="east-avg-dom"> </h4>
+              <!-- <h6 class="text-muted" id="yday-east-cond"></h6> -->
+              <!--<p>Some quick example text to build on the card title .</p>-->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row text-center">
+        <div class="col-md-4 px-5">
+          <div class="card">
+            <div class="card-header"> Average days conditionally sold (North)</div>
+            <div class="card-body">
+              <h4 id="north-avg-cdom"></h4>
+              <!-- <h6 class="text-muted" id="yday-north-sold"></h6> -->
+              <!--<p>Some quick example text to build on the card title .</p>-->
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 px-5">
+          <div class="card">
+            <div class="card-header"> Average days conditionally sold (South) </div>
+            <div class="card-body">
+              <h4 id="south-avg-cdom"></h4>
+              <!-- <h6 class="text-muted" id="yday-south-sold"></h6> -->
+              <!--<p>Some quick example text to build on the card title .</p>-->
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 px-5">
+          <div class="card">
+            <div class="card-header"> Average days conditionally sold (East) </div>
+            <div class="card-body">
+              <h4 id="east-avg-cdom"></h4>
+              <!-- <h6 class="text-muted" id="yday-east-sold"></h6> -->
+              <!--<p>Some quick example text to build on the card title .</p>-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-1">
+    <div class="container">
+            <div class="py-2 row">
+              <div class="col-md-12">
+                  <canvas id="northAvg"></canvas>
+                  </div>
+              </div>
+              <div class="py-2 row">
+                <div class="col-md-12">
+                    <canvas id="southAvg"></canvas>
+                    </div>
+                </div>
+                <div class="py-2 row">
+                  <div class="col-md-12">
+                  <canvas id="eastAvg"></canvas>
+                  </div>
+              </div>
+          <!-- <p class="">#
+            <br>
+            <br>GRAPH AVERAGE SALE PRICE BY AREA
+            <br>
+            <br>#</p> -->
+      <!-- <div class="row">
+        <div class="col-md-12">
+          <p class="">#
+            <br>
+            <br>GRAPH AVERAGE DOM BY AREA
+            <br>
+            <br>#</p>
+        </div>
+      </div> -->
+      <!-- <div class="row">
+        <div class="col-md-12">
+          <p class="">#
+            <br>
+            <br>GRAPH AVERAGE LSR PRICE BY AREA
+            <br>
+            <br>#</p>
+        </div>
+      </div> -->
+    </div>
+  </div>
+  <div class="text-center m-4">
+    <div class="container">
+      <div class="row m-2">
+        <div class="col-md-12">
+          <h1 class="text-center">Real Estate Investors</h1>
+        </div>
+      </div>
+      <div class="row m-2">
+        <div class="col-md-2">
+          <div class="card">
+            <div class="card-header bg-primary text-white"> Vacancy Rate</div>
+            <div class="card-body">
+              <h4 class="">Decreased to</h4>
+              <h4 class="text-primary">
+                <b class="">1.8%</b>
+              </h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="card">
+            <div class="card-header bg-secondary text-white"> Average Rent</div>
+            <div class="card-body">
+              <h4 class="">Increased 3%</h4>
+              <h4 class="text-secondary">
+                <b>$952</b>
+              </h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="card">
+            <div class="card-header bg-danger text-white"> Bachelor</div>
+            <div class="card-body">
+              <h4>
+                <b>3.3%</b>
+              </h4>
+              <h6 class="text-muted">Vacancy Rate</h6>
+              <h4>
+                <b>$655</b>
+              </h4>
+              <h6 class="text-muted">Avg. Rent</h6>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="card">
+            <div class="card-header bg-danger text-white"> One Bedroom</div>
+            <div class="card-body">
+              <h4>
+                <b>1.7%</b>
+              </h4>
+              <h6 class="text-muted">Vacancy Rate</h6>
+              <h4>
+                <b>$840</b>
+              </h4>
+              <h6 class="text-muted">Avg. Rent</h6>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="card">
+            <div class="card-header bg-danger text-white"> Two Bedroom</div>
+            <div class="card-body">
+              <h4>
+                <b>1.9%</b>
+              </h4>
+              <h6 class="text-muted">Vacancy Rate</h6>
+              <h4>
+                <b>$1041</b>
+              </h4>
+              <h6 class="text-muted">Avg. Rent</h6>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="card">
+            <div class="card-header bg-danger text-white"> 3+ Bedrooms</div>
+            <div class="card-body">
+              <h4>
+                <b>1.8%</b>
+              </h4>
+              <h6 class="text-muted">Vacancy Rate</h6>
+              <h4>
+                <b>$1190</b>
+              </h4>
+              <h6 class="text-muted">Avg. Rent</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <p class="">*Note: Rental data is notoriously less reliable than market sales data. This is due to the lack of reliable information readily available.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <p class="">
+            <b>Where is West London?</b>
+            <br>The local real estate board divides the city into 3 sections, whose boundaries follow the Thames river. The data available for the city is only available in this format, as the city is not divided into four quarters as you'd expect. This is
+            why you only see North, South, and East London.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script>const insightsJSON = {{ insights_json | safe }}</script>
+<script src="static/js/scripts/insights.js"></script>
+</body>
+{% include "footer.html" %}

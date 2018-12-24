@@ -1,0 +1,74 @@
+
+<html>
+
+<head>
+{% include "agenthead.html" %}
+  <title>New Employee - CityBroker Real Estate Ltd. Brokerage - London, ON</title>
+</head>
+{% include "headeragent.html" %}
+<body>
+
+  <center>
+    <br>
+    <h1> NEW AGENT/BROKER INPUT </h1>
+    <br>
+    <div class="form-group">
+      <form action="" method="POST">
+
+        <div class="p-1">
+        <input type="radio" name="position" id="salesperson" value="salesperson" required=""> <label for="salesperson">Salesperson</label>
+        <input type="radio" name="position" id="broker" value="broker" required=""> <label for="broker">Broker</label>
+    </div>
+        <!-- <br> -->
+        <p><b>Starting Date at CityBroker Real Estate Ltd.</b></p>
+<div class="p-1">
+    <input type="date" name="datejoined" min="2017" required="">
+</div>
+<div class="p-1">
+    <input type="text" name="password" placeholder="Password" required="">
+</div>
+<div class="p-1">
+    <input type="text" name="firstname" placeholder="First Name" required="">
+
+</div>
+<div class="p-1">
+    <input type="text" name="lastname" placeholder="Last Name" required="">
+
+</div>
+<div class="p-1">
+    <input type="tel" name="phone" placeholder="Cell Phone Number" required="">
+</div>
+<div class="p-1">
+    <input type="email" name="personalemail" placeholder="Personal email" required="">
+</div>
+<div class="p-1">
+    <input type="email" name="workemail" placeholder="Work email" required="">
+</div>
+<div class="p-1">
+    <input type="text" pattern="\d*" name="reconum" placeholder="RECO Registration Number" required="">
+</div>
+<div class="p-1">
+    <p><b> Commission Plan </b></p>
+</div>
+<div class="p-1">
+    <input type="radio" name="commplan" id="100%" value="100%" required=""> <label for="100%">100%</label>
+</div>
+<div class="p-1">
+    <input type="text" name="hstnum" placeholder="HST Number" required="">
+</div>
+<div class="p-1">
+    <p>
+        Mark as Admin?
+    </p>
+      <input type="radio" name="admin" id="yes" value="yes" required=""> <label for="yes">Yes</label>
+      <input type="radio" name="admin" id="no" value="no" required=""> <label for="no">No</label>
+</div>
+<div class="p-1">
+    <input type="submit" class="btn btn-primary" value="Submit">
+</div>
+    </form>
+    </div>
+  </center>
+</body>
+
+</html>

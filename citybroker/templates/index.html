@@ -1,0 +1,26 @@
+<html>
+
+<head>
+<title>CityBroker Real Estate Ltd. Brokerage - London, ON</title>
+{% include "head.html" %}
+<script> const indexJSON = {{ index_json | safe }}</script>
+<script src="{{ url_for('static', filename='js/scripts/index.js')}}" async></script>
+</head>
+{% include "headerbig.html" %}
+<body>
+
+{% include "contact.html" %}
+{% include "market.html" %}
+{% include "buysell.html" %}
+
+
+{% include "news.html" %}
+
+{% include "indexblogs.html" %}<!-- FEBRUARY 4 2018 -->
+
+{% include "warrenjohn.html" %}
+
+</body>
+{% include "footer.html" %}
+
+</html>

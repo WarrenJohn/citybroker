@@ -1,0 +1,23 @@
+<head>
+{% include "head.html" %}
+<title>Tools - CityBroker Real Estate Ltd. Brokerage - London, ON</title>
+</head>
+{% include "headerbig.html" %}
+<body>
+
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <a href="{{ url_for('zoning') }}">
+            <h1 class="">City of London Zoning Lookup</h1>
+          </a>
+          <p class="lead">Search for specific zoning uses to get an idea of what zoning your use-case falls under. If applicable, definitions will also be generated based on your search. Use this if you aren't sure what zoning your business would fall under, it will help you narrow your search.</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+{% include "footer.html" %}
